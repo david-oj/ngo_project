@@ -1,0 +1,401 @@
+@import 'tailwindcss';
+
+/* @plugin 'tailwindcss-animate'; */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-merriweather: Inter, serif;
+  --font-lato: Lato, sans-serif;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-light: hsl(var(--primary-light));
+  --color-primary-dark: hsl(var(--primary-dark));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-light: hsl(var(--secondary-light));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-light: hsl(var(--accent-light));
+  --color-accent-dark: hsl(var(--accent-dark));
+
+  --color-gold: hsl(var(--gold));
+  --color-gold-foreground: hsl(var(--gold-foreground));
+  --color-gold-light: hsl(var(--gold-light));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-neutral-50: hsl(var(--neutral-50));
+  --color-neutral-100: hsl(var(--neutral-100));
+  --color-neutral-200: hsl(var(--neutral-200));
+  --color-neutral-300: hsl(var(--neutral-300));
+  --color-neutral-400: hsl(var(--neutral-400));
+  --color-neutral-500: hsl(var(--neutral-500));
+  --color-neutral-600: hsl(var(--neutral-600));
+  --color-neutral-700: hsl(var(--neutral-700));
+  --color-neutral-800: hsl(var(--neutral-800));
+  --color-neutral-900: hsl(var(--neutral-900));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility hero-gradient {
+  /* Premium gradient backgrounds */
+  background: var(--gradient-hero);
+}
+
+@utility cta-gradient {
+  background: var(--gradient-cta);
+}
+
+@utility subtle-gradient {
+  background: var(--gradient-subtle);
+}
+
+@utility gold-gradient {
+  background: var(--gradient-gold);
+}
+
+@utility warm-gradient {
+  background: var(--gradient-warm)
+}
+
+@utility shadow-premium-soft {
+  /* Premium shadows */
+  box-shadow: var(--shadow-soft);
+}
+
+@utility shadow-premium-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+@utility shadow-premium-large {
+  box-shadow: var(--shadow-large);
+}
+
+@utility shadow-premium-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+@utility shadow-premium-2xl {
+  box-shadow: var(--shadow-2xl);
+}
+
+@utility card-premium {
+  /* Premium card hover effects */
+  @apply bg-card rounded-xl shadow-premium-soft transition-all duration-500 hover:shadow-premium-xl hover:-translate-y-2;
+}
+
+@utility btn-premium {
+  /* Premium button effects */
+  @apply relative overflow-hidden transition-all duration-300 transform hover:scale-105;
+
+  &::before {
+    content: '';
+    @apply absolute inset-0 bg-white/10 translate-x-full transition-transform duration-500;
+  }
+
+  &:hover::before {
+    @apply translate-x-0;
+  }
+}
+
+@utility animate-fade-in-up {
+  /* Animation utilities */
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@utility animate-scale-in {
+  animation: scaleIn 0.6s ease-out;
+}
+
+@utility animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@utility animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+@utility animate-counter {
+  animation: counter 2s ease-out;
+}
+
+@utility section-padding {
+  /* Section spacing */
+  @apply py-16 md:py-24 lg:py-30;
+}
+
+@utility container-premium {
+  @apply container mx-auto px-4 md:px-6 lg:px-8;
+}
+
+/* Premium NGO Design System - Professional, trustworthy, and inspiring */
+
+@layer base {
+  :root {
+    /* Base colors - Clean whites and sophisticated grays */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+
+    /* Card colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    /* Popover colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Primary - Deep Professional Blue */
+    --primary: 214 84% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 214 84% 35%;
+    --primary-dark: 214 84% 15%;
+
+    /* Secondary - Trust Green */
+    --secondary: 158 64% 28%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 158 64% 38%;
+    --secondary-dark: 158 64% 18%;
+
+    /* Accent - Premium Teal for CTAs */
+    --accent: 186 100% 31%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 186 100% 41%;
+    --accent-dark: 186 100% 21%;
+
+    /* Gold accent for premium touches */
+    --gold: 43 96% 56%;
+    --gold-foreground: 215 25% 27%;
+    --gold-light: 43 96% 66%;
+
+    /* Muted colors - Sophisticated neutrals */
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Neutral grays - Enhanced hierarchy */
+    --neutral-50: 210 20% 99%;
+    --neutral-100: 210 20% 96%;
+    --neutral-200: 210 16% 88%;
+    --neutral-300: 210 14% 73%;
+    --neutral-400: 210 14% 58%;
+    --neutral-500: 210 11% 43%;
+    --neutral-600: 210 13% 33%;
+    --neutral-700: 210 18% 23%;
+    --neutral-800: 210 18% 13%;
+    --neutral-900: 210 18% 8%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 210 20% 93%;
+    --input: 210 20% 93%;
+    --ring: 214 84% 25%;
+
+    /* Premium gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 25%) 0%, hsl(158 64% 28%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(186 100% 31%) 0%, hsl(158 64% 28%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 99%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 56%) 0%, hsl(43 96% 66%) 100%);
+
+ 
+    --gradient-warm: linear-gradient(135deg, hsl(20 90% 48%), hsl(213 94% 45%));
+
+    /* Premium shadows */
+    --shadow-soft: 0 1px 3px 0 hsl(215 25% 27% / 0.1), 0 1px 2px 0 hsl(215 25% 27% / 0.06);
+    --shadow-medium: 0 4px 6px -1px hsl(215 25% 27% / 0.1), 0 2px 4px -1px hsl(215 25% 27% / 0.06);
+    --shadow-large: 0 10px 15px -3px hsl(215 25% 27% / 0.1), 0 4px 6px -2px hsl(215 25% 27% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(215 25% 27% / 0.1), 0 10px 10px -5px hsl(215 25% 27% / 0.04);
+    --shadow-2xl: 0 25px 50px -12px hsl(215 25% 27% / 0.25);
+
+    /* Border radius */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark mode for NGO website */
+    --background: 215 25% 8%;
+    --foreground: 0 0% 95%;
+    --card: 215 25% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 215 25% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 213 94% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 76% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 20 90% 55%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 215 25% 15%;
+    --muted-foreground: 210 20% 70%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 213 94% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-lato antialiased;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-merriweather font-bold text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl lg:text-7xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  .text-premium {
+    @apply bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes counter {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
