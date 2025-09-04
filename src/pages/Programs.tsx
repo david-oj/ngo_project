@@ -88,7 +88,7 @@ const Programs = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden mt-16">
+      <section className="relative h-112 flex items-center justify-center overflow-hidden ">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -97,7 +97,7 @@ const Programs = () => {
         </div>
         
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Programs</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">Our Programs</h1>
           <p className="text-xl opacity-90">Creating lasting impact through focused interventions</p>
         </div>
       </section>
@@ -171,7 +171,7 @@ const Programs = () => {
       {/* Call to Action */}
       <section className="py-20 hero-gradient text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Join Our Mission</h2>
+          <h2 className="text-4xl font-bold mb-6 text-gradient">Join Our Mission</h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             Every program we run is made possible by the generous support of donors and volunteers like you.
           </p>

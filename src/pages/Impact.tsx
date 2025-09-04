@@ -102,7 +102,7 @@ const Impact = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden mt-16">
+      <section className="relative h-112 flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -111,7 +111,7 @@ const Impact = () => {
         </div>
         
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Impact</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">Our Impact</h1>
           <p className="text-xl opacity-90">Measuring the difference we make together</p>
         </div>
       </section>
@@ -258,7 +258,7 @@ const Impact = () => {
       {/* Call to Action */}
       <section className="py-20 hero-gradient text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Be Part of Our Next Success Story</h2>
+          <h2 className="text-4xl font-bold mb-6 text-gradient">Be Part of Our Next Success Story</h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             These achievements are only possible with the support of people like you. Join us in creating even greater impact.
           </p>

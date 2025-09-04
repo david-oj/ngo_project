@@ -77,7 +77,7 @@ const GetInvolved = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden mt-16">
+      <section className="relative h-112 flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -86,7 +86,7 @@ const GetInvolved = () => {
         </div>
         
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Get Involved</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">Get Involved</h1>
           <p className="text-xl opacity-90">Join us in creating lasting change around the world</p>
         </div>
       </section>
@@ -117,8 +117,8 @@ const GetInvolved = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {volunteerOpportunities.map((opportunity, index) => (
               <Card key={index} className="hover:shadow-ngo-medium transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
                     <opportunity.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-center">{opportunity.title}</h3>
@@ -129,7 +129,7 @@ const GetInvolved = () => {
                   </div>
                   <p className="text-muted-foreground mb-6 text-center">{opportunity.description}</p>
                   
-                  <div className="mb-6">
+                  <div className="mb-6 flex-grow ">
                     <h4 className="font-semibold mb-3">Requirements:</h4>
                     <ul className="space-y-1">
                       {opportunity.requirements.map((req, reqIndex) => (
@@ -138,7 +138,7 @@ const GetInvolved = () => {
                     </ul>
                   </div>
 
-                  <Button className="w-full">Apply Now</Button>
+                  <Button className="w-full bg-accent hover:bg-accent/90">Apply Now</Button>
                 </CardContent>
               </Card>
             ))}
@@ -165,9 +165,9 @@ const GetInvolved = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {donationOptions.map((option, index) => (
               <Card key={index} className="hover:shadow-ngo-medium transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                    <option.icon className="w-8 h-8 text-secondary-foreground" />
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                    <option.icon className="w-8 h-8 text-accent-foreground" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-center">{option.title}</h3>
                   <p className="text-muted-foreground mb-6 text-center">{option.description}</p>
@@ -176,12 +176,12 @@ const GetInvolved = () => {
                     <p className="text-sm font-medium text-center">{option.impact}</p>
                   </div>
 
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-2 mb-6 flex-grow">
                     {option.amounts.map((amount, amountIndex) => (
                       <Button 
                         key={amountIndex} 
                         variant="outline" 
-                        className="w-full justify-center"
+                        className="w-full justify-center hover:bg-accent/60"
                         size="sm"
                       >
                         {amount}
@@ -189,7 +189,7 @@ const GetInvolved = () => {
                     ))}
                   </div>
 
-                  <Button className="w-full bg-accent hover:bg-accent-light">
+                  <Button className="w-full bg-accent hover:bg-accent ">
                     Donate Now
                   </Button>
                 </CardContent>
@@ -214,7 +214,7 @@ const GetInvolved = () => {
               <Card key={index} className="hover:shadow-ngo-medium transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mr-4">
                       <partnership.icon className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <h3 className="text-2xl font-semibold">{partnership.type}</h3>
@@ -234,7 +234,7 @@ const GetInvolved = () => {
                     </div>
                   </div>
 
-                  <Button className="w-full">Learn More</Button>
+                  <Button className="w-full bg-accent hover:bg-accent/90">Learn More</Button>
                 </CardContent>
               </Card>
             ))}
@@ -243,9 +243,9 @@ const GetInvolved = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 warm-gradient text-white">
+      <section className="py-20 cta-gradient text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Join Our Mission?</h2>
+          <h2 className="text-4xl font-bold mb-6 text-gradient">Ready to Join Our Mission?</h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             Take the first step towards making a meaningful difference in the lives of those who need it most.
           </p>

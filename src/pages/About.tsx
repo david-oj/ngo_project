@@ -41,7 +41,7 @@ const About = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden mt-16">
+      <section className="relative h-112 flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -50,7 +50,7 @@ const About = () => {
         </div>
         
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">About Us</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">About Us</h1>
           <p className="text-xl opacity-90">Empowering communities through compassionate action</p>
         </div>
       </section>
@@ -62,8 +62,8 @@ const About = () => {
             <Card className="shadow-ngo-medium">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
-                    <Target className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4">
+                    <Target className="w-6 h-6 text-secondary-foreground" />
                   </div>
                   <h2 className="text-3xl font-bold">Our Mission</h2>
                 </div>
@@ -78,8 +78,8 @@ const About = () => {
             <Card className="shadow-ngo-medium">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4">
-                    <Eye className="w-6 h-6 text-secondary-foreground" />
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                    <Eye className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <h2 className="text-3xl font-bold">Our Vision</h2>
                 </div>
@@ -158,11 +158,11 @@ const About = () => {
             {milestones.map((milestone, index) => (
               <div key={index} className="flex items-center mb-8 last:mb-0">
                 <div className="flex-shrink-0 w-24 text-right mr-8">
-                  <span className="text-2xl font-bold text-primary">{milestone.year}</span>
+                  <span className="text-2xl font-bold text-secondary">{milestone.year}</span>
                 </div>
-                <div className="flex-shrink-0 w-4 h-4 bg-primary rounded-full mr-8 relative">
+                <div className="flex-shrink-0 w-4 h-4 bg-secondary rounded-full mr-8 relative">
                   {index !== milestones.length - 1 && (
-                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-0.5 h-16 bg-primary/30" />
+                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-0.5 sm:h-16 h-20 bg-secondary/30" />
                   )}
                 </div>
                 <div className="flex-1">

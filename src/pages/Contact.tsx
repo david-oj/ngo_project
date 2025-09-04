@@ -100,7 +100,7 @@ const Contact = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-96 flex items-center justify-center overflow-hidden mt-16">
+      <section className="relative h-112 flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -109,7 +109,7 @@ const Contact = () => {
         </div>
         
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Contact Us</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">Contact Us</h1>
           <p className="text-xl opacity-90">We'd love to hear from you. Let's work together to create change.</p>
         </div>
       </section>
@@ -117,9 +117,9 @@ const Contact = () => {
       {/* Contact Form & Info */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="lg:flex flex-row-reverse gap-12">
             {/* Contact Form */}
-            <Card className="shadow-ngo-medium">
+            <Card className="shadow-ngo-medium flex-1">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
                 <p className="text-muted-foreground mb-8">
@@ -197,9 +197,9 @@ const Contact = () => {
             </Card>
 
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-8 flex-1 max-lg:mt-12">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
+                <h2 className="text-3xl font-bold mb-6 ">Contact Information</h2>
                 <p className="text-muted-foreground mb-8">
                   Find the best way to reach us. Our team is available to assist you with 
                   any questions or support you need.
