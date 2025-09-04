@@ -35,7 +35,7 @@ const Navigation = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-ngo-soft"
+          ? "bg-background/90 backdrop-blur-md shadow-ngo-soft"
           : "bg-transparent"
       )}
     >
@@ -43,7 +43,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+            <div className={`w-10 h-10 rounded-full bg-primary flex items-center justify-center
+               ${isScrolled ? " hero-gradient" : "cta-gradient"}
+              `}>
               <Heart className="w-6 h-6 text-primary-foreground" />
             </div>
             {/* <span className="text-xl font-bold text-primary">Aid Pathways</span> */}
@@ -73,7 +75,9 @@ const Navigation = () => {
           <div className="flex items-center space-x-4">
             <Button
               size="sm"
-              className="btn-premium cta-gradient text-white hover:bg-accent-light font-bold max-sm:px-4 py-2 rounded-lg shadow-premium-medium"
+              className={`btn-premium text-white hover:bg-accent-light font-bold max-sm:px-4 py-2 rounded-lg shadow-premium-medium.
+                ${isScrolled ? " hero-gradient" : "cta-gradient"}
+                `}
             >
               Donate Now
             </Button>
