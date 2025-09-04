@@ -26,12 +26,12 @@ import healthcareImage from '@/assets/healthcare-program.jpg';
 import womenEmpowermentImage from '@/assets/women-empowerment.jpg';
 
 const Home = () => {
-  const stats = [
-    { icon: Users, value: '125,000+', label: 'Lives Transformed', suffix: '' },
-    { icon: Globe, value: '24', label: 'Countries Served', suffix: '' },
-    { icon: Heart, value: '2,500+', label: 'Active Volunteers', suffix: '' },
-    { icon: BookOpen, value: '450+', label: 'Educational Programs', suffix: '' },
-  ];
+  // const stats = [
+  //   { icon: Users, value: '125,000+', label: 'Lives Transformed', suffix: '' },
+  //   { icon: Globe, value: '24', label: 'Countries Served', suffix: '' },
+  //   { icon: Heart, value: '2,500+', label: 'Active Volunteers', suffix: '' },
+  //   { icon: BookOpen, value: '450+', label: 'Educational Programs', suffix: '' },
+  // ];
 
   const programs = [
     {
@@ -89,10 +89,10 @@ const Home = () => {
     }
   ];
 
-  const partners = [
-    'United Nations', 'World Health Organization', 'UNICEF', 'Red Cross',
-    'Doctors Without Borders', 'Save the Children', 'Oxfam', 'USAID'
-  ];
+  // const partners = [
+  //   'United Nations', 'World Health Organization', 'UNICEF', 'Red Cross',
+  //   'Doctors Without Borders', 'Save the Children', 'Oxfam', 'USAID'
+  // ];
 
   const newsItems = [
     {

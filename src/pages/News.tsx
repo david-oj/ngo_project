@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import heroImage from '@/assets/hero-community.jpg';
 import educationImage from '@/assets/education-program.jpg';
 import healthcareImage from '@/assets/healthcare-program.jpg';
